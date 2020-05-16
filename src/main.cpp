@@ -1,8 +1,7 @@
 #include <iostream>
-#include <unordered_map>
 #include <vector>
 
-#include "two_sum.cpp"
+#include "algos/two_sum.hpp"
 
 using namespace std;
 
