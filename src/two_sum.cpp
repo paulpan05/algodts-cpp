@@ -1,10 +1,5 @@
 #include "algos/two_sum.hpp"
 
-#include <unordered_map>
-#include <vector>
-
-using namespace std;
-
 vector<int> twoSum(vector<int> &nums, int target) {
   unordered_map<int, vector<int>> unique_nums;
 
