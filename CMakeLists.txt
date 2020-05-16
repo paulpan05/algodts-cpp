@@ -4,8 +4,8 @@ project( algodts-cpp )
 
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11" )
 
-include_directories( ./include ./src )
+include_directories( ./include ./src ./test )
 
-file( GLOB SOURCES "./src/*.cpp" "./src/**/*.cpp" )
+file( GLOB SOURCES "./src/*.cpp" "./src/**/*.cpp" "./test/*.cpp" "./test/**/*.cpp" )
 
-add_executable( algodts ${SOURCES} )
+add_executable( tests ${SOURCES} )
