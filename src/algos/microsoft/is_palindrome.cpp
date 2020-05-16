@@ -1,4 +1,4 @@
-#include "algos/is_palindrome.hpp"
+#include "algos/microsoft/is_palindrome.hpp"
 
 using namespace std;
 
