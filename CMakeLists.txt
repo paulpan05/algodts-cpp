@@ -6,6 +6,6 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11" )
 
 include_directories( ./include ./src )
 
-file(GLOB SOURCES "./src/*.cpp")
+file(GLOB SOURCES "./src/*.cpp" "./src/**/*.cpp")
 
-add_executable( binary ${SOURCES} )
+add_executable( algodts ${SOURCES} )
