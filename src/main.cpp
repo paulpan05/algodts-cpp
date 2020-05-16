@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "algos/microsoft/is_palindrome.hpp"
-#include "algos/microsoft/my_atoi.hpp"
-#include "algos/microsoft/reverse_string.hpp"
-#include "algos/microsoft/two_sum.hpp"
+#include "algos/is_palindrome.hpp"
+#include "algos/my_atoi.hpp"
+#include "algos/reverse_string.hpp"
+#include "algos/two_sum.hpp"
 
 using namespace std;
 

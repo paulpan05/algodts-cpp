@@ -1,4 +1,4 @@
-#include "algos/microsoft/reverse_string.hpp"
+#include "algos/reverse_string.hpp"
 
 using namespace std;
 

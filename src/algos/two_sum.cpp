@@ -1,4 +1,4 @@
-#include "algos/microsoft/two_sum.hpp"
+#include "algos/two_sum.hpp"
 
 #include <unordered_map>
 

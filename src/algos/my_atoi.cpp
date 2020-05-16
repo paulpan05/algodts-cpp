@@ -1,4 +1,4 @@
-#include "algos/microsoft/my_atoi.hpp"
+#include "algos/my_atoi.hpp"
 
 #include <climits>
 
