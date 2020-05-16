@@ -3,6 +3,8 @@
 #include "algos/is_palindrome.hpp"
 #include "algos/two_sum.hpp"
 
+using namespace std;
+
 int main() {
   vector<int> test{4, 1, 2, 1};
   vector<int> result = twoSum(test, 3);
