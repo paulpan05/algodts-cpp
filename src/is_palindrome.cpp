@@ -1,5 +1,7 @@
 #include "algos/is_palindrome.hpp"
 
+using namespace std;
+
 char lower(char c) {
   if (c > 64 && c < 91) {
     return c + 32;
