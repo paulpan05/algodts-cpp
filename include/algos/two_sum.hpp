@@ -1,5 +1,5 @@
-#ifndef TWOSUM_H_
-#define TWOSUM_H_
+#ifndef TWOSUM_HPP_
+#define TWOSUM_HPP_
 
 #include <unordered_map>
 #include <vector>
