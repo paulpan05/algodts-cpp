@@ -13,15 +13,15 @@ bool isDigit(char c) {
 int toDigit(char c) { return c - 48; }
 
 int myAtoi(string str) {
-  bool isNeg = false;
-  bool readStarted = false;
+  bool is_neg = false;
+  bool read_started = false;
   int result = 0;
   for (int i = 0; i < str.length(); ++i) {
-    if (readStarted) {
+    if (read_started) {
       if (!isDigit(str[i])) {
         return result;
       }
-      if (isNeg) {
+      if (is_neg) {
         if (INT_MIN / 10 - result > 0) {
           return INT_MIN;
         }
@@ -45,13 +45,13 @@ int myAtoi(string str) {
     } else {
       if (isDigit(str[i])) {
         result = toDigit(str[i]);
-        isNeg = false;
-        readStarted = true;
+        is_neg = false;
+        read_started = true;
       } else if (str[i] == '-') {
-        isNeg = true;
-        readStarted = true;
+        is_neg = true;
+        read_started = true;
       } else if (str[i] == '+') {
-        readStarted = true;
+        read_started = true;
       } else if (str[i] == ' ') {
       } else {
         return result;
