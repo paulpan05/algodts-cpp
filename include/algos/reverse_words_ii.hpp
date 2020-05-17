@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void reverseWords(std::vector<char>& s);
+void reverseWordsII(std::vector<char>& s);
 
 #endif
