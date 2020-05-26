@@ -3,25 +3,25 @@
 using namespace std;
 
 Foo::Foo() {
-  Foo::a.lock();
-  Foo::b.lock();
+  a.lock();
+  b.lock();
 }
 
 void Foo::first(function<void()> printFirst) {
   // printFirst() outputs "first". Do not change or remove this line.
   printFirst();
-  Foo::a.unlock();
+  a.unlock();
 }
 
 void Foo::second(function<void()> printSecond) {
-  Foo::a.lock();
+  a.lock();
   // printSecond() outputs "second". Do not change or remove this line.
   printSecond();
-  Foo::b.unlock();
+  b.unlock();
 }
 
 void Foo::third(function<void()> printThird) {
-  Foo::b.lock();
+  b.lock();
   // printThird() outputs "third". Do not change or remove this line.
   printThird();
 }
