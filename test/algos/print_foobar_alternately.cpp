@@ -9,8 +9,10 @@
 
 using namespace std;
 
-void printFoo() { cout << "foo"; }
-void printBar() { cout << "bar"; }
+void printFoo() {  // cout << "foo";
+}
+void printBar() {  // cout << "bar";
+}
 
 TEST_CASE("Multithreaded result foobar alternate",
           "[thread_foobar_alternate]") {

@@ -8,9 +8,12 @@
 
 using namespace std;
 
-void printFirst() { cout << "a"; }
-void printSecond() { cout << "b"; }
-void printThird() { cout << "c"; }
+void printFirst() {  // cout << "a";
+}
+void printSecond() {  // cout << "b";
+}
+void printThird() {  // cout << "c";
+}
 
 TEST_CASE("Multithreaded result print in order", "[thread_print_order]") {
   Foo obj;
