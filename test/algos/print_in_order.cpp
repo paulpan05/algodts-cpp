@@ -7,18 +7,11 @@
 
 using namespace std;
 
-void printFirst() {  // cout << "a";
-}
-void printSecond() {  // cout << "b";
-}
-void printThird() {  // cout << "c";
-}
-
 TEST_CASE("Multithreaded result print in order", "[thread_print_order]") {
   Foo obj;
-  thread thread1(&Foo::first, &obj, printFirst);
-  thread thread2(&Foo::second, &obj, printSecond);
-  thread thread3(&Foo::third, &obj, printThird);
+  thread thread1(&Foo::first, &obj, []() {});
+  thread thread2(&Foo::second, &obj, []() {});
+  thread thread3(&Foo::third, &obj, []() {});
   thread1.join();
   thread2.join();
   thread3.join();
