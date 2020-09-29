@@ -4,17 +4,36 @@
 #include <functional>
 #include <mutex>
 
+using namespace std;
+
 class Foo {
  private:
-  std::mutex a, b;
+  mutex a, b;
 
  public:
-  Foo();
-  void first(std::function<void()> printFirst);
+  Foo() {
+    a.lock();
+    b.lock();
+  }
 
-  void second(std::function<void()> printSecond);
+  void first(function<void()> printFirst) {
+    // printFirst() outputs "first". Do not change or remove this line.
+    printFirst();
+    a.unlock();
+  }
 
-  void third(std::function<void()> printThird);
+  void second(function<void()> printSecond) {
+    a.lock();
+    // printSecond() outputs "second". Do not change or remove this line.
+    printSecond();
+    b.unlock();
+  }
+
+  void third(function<void()> printThird) {
+    b.lock();
+    // printThird() outputs "third". Do not change or remove this line.
+    printThird();
+  }
 };
 
 #endif

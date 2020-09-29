@@ -1,20 +1,39 @@
-#ifndef PRINTFOOBARALTERNATELY_HPP_
-#define PRINTFOOBARALTERNATELY_HPP_
+#ifndef PRINTFOOBAR_HPP_
+#define PRINTFOOBAR_HPP_
 
 #include <functional>
 #include <mutex>
 
+using namespace std;
+
 class FooBar {
  private:
   int n;
-  std::mutex a, b;
+  mutex a, b;
 
  public:
-  FooBar(int n);
+  FooBar(int n) {
+    this->n = n;
+    a.lock();
+  }
 
-  void foo(std::function<void()> printFoo);
+  void foo(function<void()> printFoo) {
+    for (int i = 0; i < n; i++) {
+      b.lock();
+      // printFoo() outputs "foo". Do not change or remove this line.
+      printFoo();
+      a.unlock();
+    }
+  }
 
-  void bar(std::function<void()> printBar);
+  void bar(function<void()> printBar) {
+    for (int i = 0; i < n; i++) {
+      a.lock();
+      // printBar() outputs "bar". Do not change or remove this line.
+      printBar();
+      b.unlock();
+    }
+  }
 };
 
 #endif
