@@ -1,5 +1,4 @@
-#include "algos/two_sum.hpp"
-
+#include "algodts/algos.hpp"
 #include "testing/catch.hh"
 
 using namespace std;

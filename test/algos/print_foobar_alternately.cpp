@@ -1,10 +1,9 @@
 
-#include "algos/print_foobar_alternately.hpp"
-
 #include <iostream>
 #include <string>
 #include <thread>
 
+#include "algodts/algos.hpp"
 #include "testing/catch.hh"
 
 using namespace std;

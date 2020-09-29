@@ -1,5 +1,4 @@
-#include "algos/product_except_self.hpp"
-
+#include "algodts/algos.hpp"
 #include "testing/catch.hh"
 
 using namespace std;

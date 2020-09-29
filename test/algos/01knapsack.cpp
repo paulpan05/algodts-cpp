@@ -1,5 +1,4 @@
-#include "algos/01knapsack.hpp"
-
+#include "algodts/algos.hpp"
 #include "testing/catch.hh"
 
 using namespace std;

@@ -1,20 +1,19 @@
 #ifndef MYATOI_HPP_
 #define MYATOI_HPP_
 
-#include <string>
 #include <limits>
+#include <string>
 
 using namespace std;
 
-bool isDigit(char c) {
-  if (c > 47 && c < 58) {
-    return true;
-  }
-  return false;
-}
-int toDigit(char c) { return c - 48; }
-
-int myAtoi(string str) {
+inline int myAtoi(string str) {
+  auto isDigit = [](char c) -> bool {
+    if (c > 47 && c < 58) {
+      return true;
+    }
+    return false;
+  };
+  auto toDigit = [](char c) -> char { return c - 48; };
   bool is_neg = false;
   bool read_started = false;
   int result = 0;

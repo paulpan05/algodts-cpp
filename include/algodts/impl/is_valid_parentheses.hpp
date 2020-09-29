@@ -1,12 +1,12 @@
 #ifndef VALIDPARENTHESES_HPP_
 #define VALIDPARENTHESES_HPP_
 
-#include <string>
 #include <stack>
+#include <string>
 
 using namespace std;
 
-bool isValidParentheses(string s) {
+inline bool isValidParentheses(string s) {
   stack<char> tmp;
   for (const char c : s) {
     switch (c) {

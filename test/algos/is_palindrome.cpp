@@ -1,5 +1,4 @@
-#include "algos/is_palindrome.hpp"
-
+#include "algodts/algos.hpp"
 #include "testing/catch.hh"
 
 TEST_CASE("Check if strings are palindromes", "[palindrome]") {

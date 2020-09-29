@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string reverseWords(string s) {
+inline string reverseWords(string s) {
   string result = "";
   int end_idx = s.length();
   bool word_started = false;

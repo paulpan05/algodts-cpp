@@ -5,7 +5,7 @@
 
 using namespace std;
 
-vector<int> productExceptSelf(vector<int>& nums) {
+inline vector<int> productExceptSelf(vector<int>& nums) {
   vector<int> tmp(nums);
   if (nums.empty()) {
     return nums;

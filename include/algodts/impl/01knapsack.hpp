@@ -1,12 +1,12 @@
 #ifndef KNAPSACK_HPP_
 #define KNAPSACK_HPP_
 
-#include <vector>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
-int knapsack(vector<int>& values, vector<int>& weights, int capacity) {
+inline int knapsack(vector<int>& values, vector<int>& weights, int capacity) {
   vector<vector<int>> dp_table(weights.size(), vector<int>(capacity + 1, 0));
   for (int i = 0; i < dp_table.size(); ++i) {
     for (int j = 0; j < dp_table[0].size(); ++j) {

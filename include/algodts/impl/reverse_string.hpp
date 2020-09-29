@@ -1,15 +1,14 @@
 #ifndef REVERSESTRING_HPP_
 #define REVERSESTRING_HPP_
 
+#include <algorithm>
 #include <vector>
 
 using namespace std;
 
-void reverseString(vector<char>& s) {
+inline void reverseString(vector<char>& s) {
   for (int i = 0; i < s.size() / 2; ++i) {
-    char tmp = s[i];
-    s[i] = s[s.size() - 1 - i];
-    s[s.size() - 1 - i] = tmp;
+    swap(s[i], s[s.size() - i - 1]);
   }
 }
 

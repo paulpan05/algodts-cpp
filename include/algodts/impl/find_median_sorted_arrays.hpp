@@ -5,7 +5,7 @@
 
 using namespace std;
 
-double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+inline double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
   vector<int> medians;
   int total_length = nums1.size() + nums2.size();
   int middle = (total_length - 1) / 2;

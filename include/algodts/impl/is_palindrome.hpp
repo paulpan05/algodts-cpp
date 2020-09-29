@@ -5,20 +5,19 @@
 
 using namespace std;
 
-char lower(char c) {
-  if (c > 64 && c < 91) {
-    return c + 32;
-  }
-  return c;
-}
-bool isAscii(char c) {
-  if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123)) {
-    return true;
-  }
-  return false;
-}
-
-bool isPalindrome(string s) {
+inline bool isPalindrome(string s) {
+  auto lower = [](char c) -> char {
+    if (c > 64 && c < 91) {
+      return c + 32;
+    }
+    return c;
+  };
+  auto isAscii = [](char c) -> bool {
+    if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123)) {
+      return true;
+    }
+    return false;
+  };
   int front_ptr = 0;
   int back_ptr = s.length() - 1;
   while (front_ptr <= back_ptr) {
