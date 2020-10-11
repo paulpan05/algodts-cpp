@@ -1,9 +1,8 @@
+#include <algodts/algos.hpp>
 #include <iostream>
 #include <string>
+#include <testing/catch.hh>
 #include <thread>
-
-#include "algodts/algos.hpp"
-#include "testing/catch.hh"
 
 using namespace std;
 
