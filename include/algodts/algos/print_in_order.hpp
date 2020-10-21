@@ -9,15 +9,29 @@ class Foo {
   std::mutex a, b;
 
  public:
-  Foo();
+  Foo() {
+    a.lock();
+    b.lock();
+  }
 
-  void first(std::function<void()> printFirst);
+  void first(std::function<void()> printFirst) {
+    // printFirst() outputs "first". Do not change or remove this line.
+    printFirst();
+    a.unlock();
+  }
 
-  void second(std::function<void()> printSecond);
+  void second(std::function<void()> printSecond) {
+    a.lock();
+    // printSecond() outputs "second". Do not change or remove this line.
+    printSecond();
+    b.unlock();
+  }
 
-  void third(std::function<void()> printThird);
+  void third(std::function<void()> printThird) {
+    b.lock();
+    // printThird() outputs "third". Do not change or remove this line.
+    printThird();
+  }
 };
-
-#include <algodts/algos/impl/print_in_order.ipp>
 
 #endif
