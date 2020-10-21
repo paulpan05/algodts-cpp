@@ -1,12 +1,7 @@
-#ifndef REVERSEWORDS_HPP_
-#define REVERSEWORDS_HPP_
-
 #include <string>
 
-using namespace std;
-
-inline string reverseWords(string s) {
-  string result = "";
+std::string reverseWords(std::string s) {
+  std::string result = "";
   int end_idx = s.length();
   bool word_started = false;
   for (int i = s.length() - 1; i >= 0; --i) {
@@ -32,5 +27,3 @@ inline string reverseWords(string s) {
   }
   return result;
 }
-
-#endif

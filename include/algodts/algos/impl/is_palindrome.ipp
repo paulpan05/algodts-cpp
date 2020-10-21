@@ -1,11 +1,6 @@
-#ifndef ISPALINDROME_HPP_
-#define ISPALINDROME_HPP_
-
 #include <string>
 
-using namespace std;
-
-inline bool isPalindrome(string s) {
+bool isPalindrome(std::string s) {
   auto lower = [](char c) -> char {
     if (c > 64 && c < 91) {
       return c + 32;
@@ -34,5 +29,3 @@ inline bool isPalindrome(string s) {
   }
   return true;
 }
-
-#endif

@@ -1,4 +1,4 @@
-#include <algodts/impl/two_sum.hpp>
+#include <algodts/algos/two_sum.hpp>
 #include <testing/catch.hh>
 
 using namespace std;

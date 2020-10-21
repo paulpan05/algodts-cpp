@@ -1,4 +1,4 @@
-#include <algodts/impl/reverse_string.hpp>
+#include <algodts/algos/reverse_string.hpp>
 #include <testing/catch.hh>
 
 using namespace std;

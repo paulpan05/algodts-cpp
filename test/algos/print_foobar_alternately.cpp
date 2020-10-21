@@ -1,4 +1,4 @@
-#include <algodts/impl/print_foobar_alternately.hpp>
+#include <algodts/algos/print_foobar_alternately.hpp>
 #include <testing/catch.hh>
 #include <thread>
 

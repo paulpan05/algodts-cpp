@@ -1,13 +1,8 @@
-#ifndef NUMISLANDS_HPP_
-#define NUMISLANDS_HPP_
-
 #include <functional>
 #include <vector>
 
-using namespace std;
-
-inline int numIslands(vector<vector<char>>& grid) {
-  function<void(int, int)> dfs = [&](int row, int column) {
+int numIslands(std::vector<std::vector<char>>& grid) {
+  std::function<void(int, int)> dfs = [&](int row, int column) {
     int rows = grid.size();
     int columns = grid[0].size();
 
@@ -32,5 +27,3 @@ inline int numIslands(vector<vector<char>>& grid) {
   }
   return num_islands;
 }
-
-#endif

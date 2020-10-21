@@ -1,12 +1,8 @@
-#ifndef MEDIANSORTEDARRAYS_HPP_
-#define MEDIANSORTEDARRAYS_HPP_
-
 #include <vector>
 
-using namespace std;
-
-inline double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-  vector<int> medians;
+double findMedianSortedArrays(std::vector<int>& nums1,
+                              std::vector<int>& nums2) {
+  std::vector<int> medians;
   int total_length = nums1.size() + nums2.size();
   int middle = (total_length - 1) / 2;
   medians.emplace_back(middle);
@@ -52,5 +48,3 @@ inline double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
   }
   return total_medians / medians.size();
 }
-
-#endif

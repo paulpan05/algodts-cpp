@@ -1,12 +1,7 @@
-#ifndef PRODUCTEXCEPTSELF_HPP_
-#define PRODUCTEXCEPTSELF_HPP_
-
 #include <vector>
 
-using namespace std;
-
-inline vector<int> productExceptSelf(vector<int>& nums) {
-  vector<int> tmp(nums);
+std::vector<int> productExceptSelf(std::vector<int>& nums) {
+  std::vector<int> tmp(nums);
   if (nums.empty()) {
     return nums;
   }
@@ -21,5 +16,3 @@ inline vector<int> productExceptSelf(vector<int>& nums) {
   nums[0] = tmp[1];
   return nums;
 }
-
-#endif

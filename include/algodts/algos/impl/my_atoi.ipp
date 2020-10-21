@@ -1,12 +1,7 @@
-#ifndef MYATOI_HPP_
-#define MYATOI_HPP_
-
 #include <limits>
 #include <string>
 
-using namespace std;
-
-inline int myAtoi(string str) {
+int myAtoi(std::string str) {
   auto isDigit = [](char c) -> bool {
     if (c > 47 && c < 58) {
       return true;
@@ -23,23 +18,23 @@ inline int myAtoi(string str) {
         return result;
       }
       if (is_neg) {
-        if (numeric_limits<int>::min() / 10 - result > 0) {
-          return numeric_limits<int>::min();
+        if (std::numeric_limits<int>::min() / 10 - result > 0) {
+          return std::numeric_limits<int>::min();
         }
         result *= 10;
         int curDigit = toDigit(str[i]);
-        if (numeric_limits<int>::min() - result > -curDigit) {
-          return numeric_limits<int>::min();
+        if (std::numeric_limits<int>::min() - result > -curDigit) {
+          return std::numeric_limits<int>::min();
         }
         result -= toDigit(str[i]);
       } else {
-        if (numeric_limits<int>::max() / 10 - result < 0) {
-          return numeric_limits<int>::max();
+        if (std::numeric_limits<int>::max() / 10 - result < 0) {
+          return std::numeric_limits<int>::max();
         }
         result *= 10;
         int curDigit = toDigit(str[i]);
-        if (numeric_limits<int>::max() - result < curDigit) {
-          return numeric_limits<int>::max();
+        if (std::numeric_limits<int>::max() - result < curDigit) {
+          return std::numeric_limits<int>::max();
         }
         result += toDigit(str[i]);
       }
@@ -61,5 +56,3 @@ inline int myAtoi(string str) {
   }
   return result;
 }
-
-#endif

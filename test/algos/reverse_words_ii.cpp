@@ -1,4 +1,4 @@
-#include <algodts/impl/reverse_words_ii.hpp>
+#include <algodts/algos/reverse_words_ii.hpp>
 #include <testing/catch.hh>
 
 using namespace std;

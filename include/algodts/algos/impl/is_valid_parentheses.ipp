@@ -1,13 +1,8 @@
-#ifndef VALIDPARENTHESES_HPP_
-#define VALIDPARENTHESES_HPP_
-
 #include <stack>
 #include <string>
 
-using namespace std;
-
-inline bool isValidParentheses(string s) {
-  stack<char> tmp;
+bool isValidParentheses(std::string s) {
+  std::stack<char> tmp;
   for (const char c : s) {
     switch (c) {
       case ']':
@@ -40,5 +35,3 @@ inline bool isValidParentheses(string s) {
   }
   return false;
 }
-
-#endif

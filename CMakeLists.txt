@@ -6,8 +6,8 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17" )
 
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
-include_directories( ./include )
-
 file( GLOB SOURCES "./test/*.cpp" "./test/**/*.cpp" )
 
 add_executable( tests ${SOURCES} )
+
+target_include_directories( tests PUBLIC include )

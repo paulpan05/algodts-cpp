@@ -1,4 +1,4 @@
-#include <algodts/impl/number_of_islands.hpp>
+#include <algodts/algos/number_of_islands.hpp>
 #include <testing/catch.hh>
 
 using namespace std;
