@@ -1,4 +1,4 @@
-#include <algodts/algos.hpp>
+#include <algodts/impl/find_median_sorted_arrays.hpp>
 #include <testing/catch.hh>
 
 using namespace std;

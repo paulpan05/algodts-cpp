@@ -1,4 +1,4 @@
-#include <algodts/algos.hpp>
+#include <algodts/impl/product_except_self.hpp>
 #include <testing/catch.hh>
 
 using namespace std;

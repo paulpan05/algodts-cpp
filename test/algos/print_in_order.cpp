@@ -1,4 +1,4 @@
-#include <algodts/algos.hpp>
+#include <algodts/impl/print_in_order.hpp>
 #include <iostream>
 #include <string>
 #include <testing/catch.hh>
