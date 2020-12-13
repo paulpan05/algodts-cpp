@@ -6,8 +6,13 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17" )
 
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
-file( GLOB SOURCES "./test/*.cpp" "./test/**/*.cpp" )
+include_directories( ./include )
 
-add_executable( tests ${SOURCES} )
+if( APPLE )
+	include_directories( /usr/local/include )
+	link_directories( /usr/local/lib )
+endif()
 
-target_include_directories( tests PUBLIC include )
+file( GLOB TEST_SOURCES "./test/*.cpp" "./test/**/*.cpp" )
+
+add_executable( tests ${TEST_SOURCES} )
