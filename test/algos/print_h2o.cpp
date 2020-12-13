@@ -15,10 +15,10 @@ TEST_CASE("Multithreaded result print H2O", "[thread_print_h2o]") {
   function<void()> print_o = [&oss]() { oss << 'O'; };
 
   for (int i = 0; i < 20; ++i) {
-    thread_pool.emplace_back(&H2O::hydrogen, &obj, cref(print_h));
+    thread_pool.emplace_back(&H2O::hydrogen, &obj, ref(print_h));
   }
   for (int j = 0; j < 10; ++j) {
-    thread_pool.emplace_back(&H2O::oxygen, &obj, cref(print_o));
+    thread_pool.emplace_back(&H2O::oxygen, &obj, ref(print_o));
   }
 
   for (thread& t : thread_pool) {
