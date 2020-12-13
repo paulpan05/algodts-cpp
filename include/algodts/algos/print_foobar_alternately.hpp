@@ -12,7 +12,7 @@ class FooBar {
  public:
   FooBar(int n) : n(n) { a.lock(); }
 
-  void foo(std::function<void()> printFoo) {
+  void foo(std::function<void()>& printFoo) {
     for (int i = 0; i < n; i++) {
       b.lock();
       // printFoo() outputs "foo". Do not change or remove this line.
@@ -21,7 +21,7 @@ class FooBar {
     }
   }
 
-  void bar(std::function<void()> printBar) {
+  void bar(std::function<void()>& printBar) {
     for (int i = 0; i < n; i++) {
       a.lock();
       // printBar() outputs "bar". Do not change or remove this line.
