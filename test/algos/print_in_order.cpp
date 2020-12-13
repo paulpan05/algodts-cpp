@@ -1,5 +1,5 @@
 #include <algodts/algos/print_in_order.hpp>
-#include <iostream>
+#include <sstream>
 #include <string>
 #include <testing/catch.hh>
 #include <thread>
@@ -8,10 +8,20 @@ using namespace std;
 
 TEST_CASE("Multithreaded result print in order", "[thread_print_order]") {
   Foo obj;
-  thread thread1(&Foo::first, &obj, []() {});
-  thread thread2(&Foo::second, &obj, []() {});
-  thread thread3(&Foo::third, &obj, []() {});
-  thread1.join();
-  thread2.join();
-  thread3.join();
+  vector<thread> thread_pool;
+  ostringstream oss;
+
+  function<void()> print_first = [&oss]() { oss << "first"; };
+  function<void()> print_second = [&oss]() { oss << "second"; };
+  function<void()> print_third = [&oss]() { oss << "third"; };
+
+  thread_pool.emplace_back(&Foo::third, &obj, print_third);
+  thread_pool.emplace_back(&Foo::second, &obj, print_second);
+  thread_pool.emplace_back(&Foo::first, &obj, print_first);
+
+  for (thread& t : thread_pool) {
+    t.join();
+  }
+
+  REQUIRE(oss.str() == "firstsecondthird");
 }

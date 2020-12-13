@@ -10,10 +10,7 @@ class FooBar {
   std::mutex a, b;
 
  public:
-  FooBar(int n) {
-    this->n = n;
-    a.lock();
-  }
+  FooBar(int n) : n(n) { a.lock(); }
 
   void foo(std::function<void()> printFoo) {
     for (int i = 0; i < n; i++) {
