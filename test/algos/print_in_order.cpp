@@ -15,9 +15,9 @@ TEST_CASE("Multithreaded result print in order", "[thread_print_order]") {
   function<void()> print_second = [&oss]() { oss << "second"; };
   function<void()> print_third = [&oss]() { oss << "third"; };
 
-  thread_pool.emplace_back(&Foo::third, &obj, ref(print_third));
-  thread_pool.emplace_back(&Foo::second, &obj, ref(print_second));
-  thread_pool.emplace_back(&Foo::first, &obj, ref(print_first));
+  thread_pool.emplace_back(&Foo::third, &obj, cref(print_third));
+  thread_pool.emplace_back(&Foo::second, &obj, cref(print_second));
+  thread_pool.emplace_back(&Foo::first, &obj, cref(print_first));
 
   for (thread& t : thread_pool) {
     t.join();

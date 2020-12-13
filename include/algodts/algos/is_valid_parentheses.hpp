@@ -4,7 +4,7 @@
 #include <stack>
 #include <string>
 
-bool isValidParentheses(std::string s) {
+bool isValidParentheses(std::string& s) {
   std::stack<char> tmp;
   for (const char c : s) {
     switch (c) {

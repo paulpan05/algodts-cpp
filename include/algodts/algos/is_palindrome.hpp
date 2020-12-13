@@ -3,7 +3,7 @@
 
 #include <string>
 
-bool isPalindrome(std::string s) {
+bool isPalindrome(std::string& s) {
   auto lower = [](char c) -> char {
     if (c > 64 && c < 91) {
       return c + 32;

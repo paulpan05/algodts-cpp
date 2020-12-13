@@ -1,6 +1,9 @@
 #include <algodts/algos/is_valid_parentheses.hpp>
 #include <testing/catch.hh>
 
+using namespace std;
+
 TEST_CASE("Testing parentheses validity", "[parentheses]") {
-  REQUIRE_FALSE(isValidParentheses("{}[]]"));
+  string input = "{}[]]";
+  REQUIRE_FALSE(isValidParentheses(input));
 }

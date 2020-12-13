@@ -3,7 +3,7 @@
 
 #include <string>
 
-std::string reverseWords(std::string s) {
+std::string reverseWords(std::string& s) {
   std::string result = "";
   int end_idx = s.length();
   bool word_started = false;

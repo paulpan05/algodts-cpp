@@ -4,7 +4,7 @@
 #include <limits>
 #include <string>
 
-int myAtoi(std::string str) {
+int myAtoi(std::string& str) {
   auto isDigit = [](char c) -> bool {
     if (c > 47 && c < 58) {
       return true;

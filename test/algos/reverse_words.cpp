@@ -4,5 +4,6 @@
 using namespace std;
 
 TEST_CASE("Reversing words", "[word]") {
-  REQUIRE(reverseWords("Hello World!") == "World! Hello");
+  string input = "Hello World!";
+  REQUIRE(reverseWords(input) == "World! Hello");
 }

@@ -13,7 +13,7 @@ class H2O {
   std::condition_variable cond_h, cond_o;
   H2O() : h_count(0), ready(0) {}
 
-  void hydrogen(std::function<void()>& releaseHydrogen) {
+  void hydrogen(const std::function<void()>& releaseHydrogen) {
     std::unique_lock<std::mutex> lck(mtx_h);
     while (ready % 3 == 0) {
       cond_h.wait(lck);
@@ -30,7 +30,7 @@ class H2O {
     }
   }
 
-  void oxygen(std::function<void()>& releaseOxygen) {
+  void oxygen(const std::function<void()>& releaseOxygen) {
     std::unique_lock<std::mutex> lck(mtx_o);
     while (ready % 3 != 0) {
       cond_o.wait(lck);

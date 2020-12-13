@@ -15,8 +15,8 @@ TEST_CASE("Multithreaded result foobar alternate",
   function<void()> print_foo = [&oss]() { oss << "foo"; };
   function<void()> print_bar = [&oss]() { oss << "bar"; };
 
-  thread_pool.emplace_back(&FooBar::bar, &obj, ref(print_bar));
-  thread_pool.emplace_back(&FooBar::foo, &obj, ref(print_foo));
+  thread_pool.emplace_back(&FooBar::bar, &obj, cref(print_bar));
+  thread_pool.emplace_back(&FooBar::foo, &obj, cref(print_foo));
 
   for (thread& t : thread_pool) {
     t.join();
