@@ -2,7 +2,12 @@ cmake_minimum_required( VERSION 3.0 )
 
 project( algodts-cpp )
 
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17" )
+if( UNIX )
+	set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -std=c++17" )
+elseif( WIN32 )
+	set( CMAKE_CXX_STANDARD 17 )
+	set( CMAKE_CXX_STANDARD_REQUIRED ON )
+endif()
 
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 

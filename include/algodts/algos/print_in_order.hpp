@@ -1,36 +1,50 @@
 #ifndef PRINTINORDER_HPP_
 #define PRINTINORDER_HPP_
 
+#include <condition_variable>
 #include <functional>
 #include <mutex>
 
 class Foo {
  private:
-  std::mutex a, b;
+  std::mutex mtx;
+  std::condition_variable cv;
+  int now;
 
  public:
-  Foo() {
-    a.lock();
-    b.lock();
-  }
+  Foo() : now(0) {}
 
   void first(std::function<void()>& printFirst) {
     // printFirst() outputs "first". Do not change or remove this line.
-    printFirst();
-    a.unlock();
+    {
+      std::unique_lock<std::mutex> lock(mtx);
+      cv.wait(lock, [this]() { return now == 0; });
+      now = 1;
+      printFirst();
+    }
+    cv.notify_all();
   }
 
   void second(std::function<void()>& printSecond) {
-    a.lock();
     // printSecond() outputs "second". Do not change or remove this line.
-    printSecond();
-    b.unlock();
+    {
+      std::unique_lock<std::mutex> lock(mtx);
+      cv.wait(lock, [this]() { return now == 1; });
+      now = 2;
+      printSecond();
+    }
+    cv.notify_all();
   }
 
   void third(std::function<void()>& printThird) {
-    b.lock();
     // printThird() outputs "third". Do not change or remove this line.
-    printThird();
+    {
+      std::unique_lock<std::mutex> lock(mtx);
+      cv.wait(lock, [this]() { return now == 2; });
+      now = 0;
+      printThird();
+    }
+    cv.notify_all();
   }
 };
 

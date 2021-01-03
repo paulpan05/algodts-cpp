@@ -86,3 +86,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# CMake cache
+.cache/
+
