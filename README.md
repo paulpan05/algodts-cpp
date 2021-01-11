@@ -16,4 +16,4 @@ before project in ```CMakeLists.txt``` on Windows platform.
 
 Also, add ```VCPKG_DEFAULT_TRIPLET``` as ```x64-windows``` and ```VCPKG_TOOLCHAIN_FILE``` as ```C:\vcpkg\scripts\buildsystems\vcpkg.cmake``` on Windows.
 
-If a makefile is desired, do ```cmake -G "NMake Makefiles" ..``` on Windows.
+If a makefile is desired, do ```cmake -G "NMake Makefiles" ..``` on Windows to specify the nmake generator.
