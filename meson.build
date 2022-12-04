@@ -1,4 +1,4 @@
-project('algodts-cpp', 'cpp')
+project('algodts-cpp', 'cpp', license: 'Apache-2.0', version: '0.1')
 python = find_program(['python3', 'python'], required: true)
 glob = run_command(python, 'list_sources.py', check: true)
 srcs = glob.stdout().strip().split('\n')
