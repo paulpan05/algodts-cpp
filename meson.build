@@ -1,0 +1,7 @@
+project('algodts-cpp', 'cpp')
+python = find_program(['python3', 'python'], required: true)
+glob = run_command(python, 'list_sources.py', check: true)
+srcs = glob.stdout().strip().split('\n')
+incdir = include_directories('include')
+threads_dep = dependency('threads')
+executable('algodts_tests', srcs, include_directories: incdir, dependencies: threads_dep)

@@ -33,6 +33,7 @@
 
 # Folders
 build/
+builddir/
 .clangd/
 
 # General
@@ -90,3 +91,6 @@ $RECYCLE.BIN/
 # CMake cache
 .cache/
 
+# Vim temporary files
+*.swp
+*~
